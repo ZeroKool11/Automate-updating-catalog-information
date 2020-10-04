@@ -7,15 +7,15 @@ import locale
 import emails
 
 source = "supplier-data/descriptions/"
-username = "student-01-86c4d6bcdf00"
+username = "student-04-14d59004255b"
 def string_to_report():
 	str_to_repo = ""
 	for file in os.listdir(source):
 		name, ext = os.path.splitext(file)
 		if ext == ".txt":
 			with open(source + file) as fo:
-				str_to_repo = str_to_repo + fo.readline() + "<br/>"
-				str_to_repo = str_to_repo + fo.readline() + "<br/>"
+				str_to_repo = str_to_repo +  "name: " + fo.readline() + "<br/>"
+				str_to_repo = str_to_repo + "weight: " + fo.readline() + "<br/>"
 				str_to_repo = str_to_repo + "<br/>"
 	return str_to_repo
 
