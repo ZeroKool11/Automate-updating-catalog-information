@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import os
-import datetime
+from datetime import date
 import reports
 import locale
 
@@ -19,12 +19,15 @@ def string_to_report():
 	return str_to_repo
 
 def report(string_to_repo):
-	reports.generate("processed.pdf","Report",string_to_repo)
-	reports.generate("/tmp/processed.pdf","Report",string_to_repo)
+	today = date.today()
+	title = "Processed Update on {}".format(today)
+	reports.generate("processed.pdf",title,string_to_repo)
+	reports.generate("/tmp/processed.pdf",title,string_to_repo)
 
 def main():
 	locale.setlocale(locale.LC_ALL, 'en_US.UTF8')
 	string_to_repo = string_to_report()
+	today = date.today()
 	report(string_to_repo)
 	
 
