@@ -13,15 +13,15 @@ def string_to_report():
 		name, ext = os.path.splitext(file)
 		if ext == ".txt":
 			with open(source + file) as fo:
-				str_to_repo = str_to_repo + fo.readline()
-				str_to_repo = str_to_repo + fo.readline()
-				str_to_repo = str_to_repo + "\n"
+				str_to_repo = str_to_repo + fo.readline() + "<br/>"
+				str_to_repo = str_to_repo + fo.readline() + "<br/>"
+				str_to_repo = str_to_repo + "<br/>"
 
 	return str_to_repo
 
 
-def report():
-	pass	
+def report(string_to_repo):
+	reports.generate("processed.pdf","Report",string_to_repo)
 
 
 
@@ -29,7 +29,9 @@ def report():
 
 def main():
 	locale.setlocale(locale.LC_ALL, 'en_US.UTF8')
-	print(string_to_report())
+	string_to_repo = string_to_report()
+	report(string_to_repo)
+	print(string_to_repo)
 
 
 
