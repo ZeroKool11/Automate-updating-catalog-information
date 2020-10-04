@@ -15,7 +15,7 @@ def string_to_report():
 			with open(source + file) as fo:
 				str_to_repo = str_to_repo + fo.readline() + "<br/>"
 				str_to_repo = str_to_repo + fo.readline() + "<br/>"
-				str_to_repo = str_to_repo + "<br/><br/>"
+				str_to_repo = str_to_repo + "<br/>"
 
 	return str_to_repo
 
