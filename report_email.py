@@ -14,7 +14,7 @@ def string_to_report():
 		if ext == ".txt":
 			with open(source + file) as fo:
 				str_to_repo = str_to_repo + fo.readline() + "<br/>"
-				str_to_repo = str_to_repo + fo.readline() + "<br/>"
+				str_to_repo = str_to_repo + fo.readline()
 				#str_to_repo = str_to_repo + "<br/>"
 
 	return str_to_repo
