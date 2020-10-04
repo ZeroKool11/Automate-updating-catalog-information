@@ -5,7 +5,7 @@ import requests
 import locale
 import json
 
-url = "http://35.202.181.107/fruits/"
+url = "http://localhost/fruits/"
 source_img = "supplier-data/images/"
 source_desc = "supplier-data/descriptions/"
 locale.setlocale(locale.LC_ALL, 'en_US.UTF8')
