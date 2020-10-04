@@ -16,22 +16,17 @@ def string_to_report():
 				str_to_repo = str_to_repo + fo.readline() + "<br/>"
 				str_to_repo = str_to_repo + fo.readline() + "<br/>"
 				str_to_repo = str_to_repo + "<br/>"
-
 	return str_to_repo
-
 
 def report(string_to_repo):
 	reports.generate("processed.pdf","Report",string_to_repo)
-
-
-
-
+	reports.generate("/tmp/processed.pdf","Report",string_to_repo)
 
 def main():
 	locale.setlocale(locale.LC_ALL, 'en_US.UTF8')
 	string_to_repo = string_to_report()
 	report(string_to_repo)
-	print(string_to_repo)
+	
 
 
 
