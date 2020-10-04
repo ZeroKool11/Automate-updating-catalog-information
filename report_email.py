@@ -4,9 +4,10 @@ import os
 from datetime import date
 import reports
 import locale
+import emails
 
 source = "supplier-data/descriptions/"
-
+username = "student-01-86c4d6bcdf00"
 def string_to_report():
 	str_to_repo = ""
 	for file in os.listdir(source):
@@ -24,11 +25,23 @@ def report(string_to_repo):
 	reports.generate("processed.pdf",title,string_to_repo)
 	reports.generate("/tmp/processed.pdf",title,string_to_repo)
 
+
+def email():
+	sender = "automation@example.com"
+	receiver = username + "@example.com"
+	subject = "Upload Completed - Online Fruit Store"
+	body = "All fruits are uploaded to our website successfully. A detailed list is attached to this email."
+	Attachment = "/tmp/processed.pdf"
+
+	message = emails.generate(sender,receiver,subject,body,Attachment)
+	emails.send(message)
+
 def main():
 	locale.setlocale(locale.LC_ALL, 'en_US.UTF8')
 	string_to_repo = string_to_report()
 	today = date.today()
 	report(string_to_repo)
+	email()
 	
 
 

@@ -17,4 +17,4 @@ def generate(filename, title, additional_info):
   #report_table = Table(data=table_data, style=table_style, hAlign="LEFT")
   empty_line = Spacer(1,20)
   #report.build([report_title, empty_line, report_info, empty_line, report_table])
-  report.build([report_title, empty_line, report_info, empty_line])
+  report.build([report_title, empty_line, report_info])
